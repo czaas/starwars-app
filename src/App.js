@@ -10,10 +10,14 @@ import Home from './components/Home';
 import Starships from './components/Starships';
 import NotFound from './components/NotFound';
 
-//styles
 import './App.scss';
 
 class App extends Component {
+	state = {
+		counter: 0,
+		loading: true
+	}
+
   render() {
     return (
       <Router>
