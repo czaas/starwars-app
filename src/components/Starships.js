@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import swapiModule from './swapi.js';
 import { getUrlParams } from '../util.js';
 
@@ -53,7 +55,7 @@ class Starships extends React.Component {
           {
             this.state.ships.map((ship, index) => {
                if ( ship.name.toLowerCase().indexOf(this.state.currentSearch.toLowerCase()) !== -1 ) {
-                 return <li key={`starship${index}`}>{ship.name}</li>;
+                 return <li key={`starship${index}`}><Link to={ship.url.replace('https://swapi.co/api', '')}>{ship.name}</Link></li>;
                } else {
                 return null;
                }

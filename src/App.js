@@ -8,6 +8,7 @@ import {
 
 import Home from './components/Home';
 import Starships from './components/Starships';
+import Starship from './components/Starship';
 import NotFound from './components/NotFound';
 
 import './App.scss';
@@ -31,7 +32,8 @@ class App extends Component {
 
           <Switch>
             <Route path="/" exact render={Home} />
-            <Route path="/starships" component={Starships} />
+            <Route path="/starships" exact component={Starships} />
+            <Route path="/starships/:id" component={Starship} />
             <Route path="*" render={NotFound} />
           </Switch>
         </div>
