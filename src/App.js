@@ -9,18 +9,6 @@ class App extends Component {
 		loading: true
 	}
 
-
-	componentWillMount(){
-    
-	}
-
-	componentDidMount(){
-	}
-
-	componentWillReceiveProps(){
-
-	}
-
   render() {
     return (
       <div>
