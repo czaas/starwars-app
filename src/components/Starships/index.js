@@ -14,20 +14,17 @@ class Starships extends React.Component {
   componentDidMount() {
     const that = this;
 
-//    do {
-      swapi.getStarships(that.state.page, res => {                
-        let next = that.getUrlParams(res.next)['page'];      
-        that.setState({
-          page: next
-        })
+    swapi.getStarships(that.state.page, res => {                
+      let next = that.getUrlParams(res.next)['page'];      
+      that.setState({
+        page: next
+      })
 
-        that.setState({
-          ships: [...that.state.ships, ...res.results]
-        })
+      that.setState({
+        ships: [...that.state.ships, ...res.results]
+      })
 
-      });
-//    } while ( that.state.page != null )
-
+    });
 
   }
 
