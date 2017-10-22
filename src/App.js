@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Starships from './components/Starships';
 
-//styles
 import './App.scss';
+
 class App extends Component {
+	state = {
+		counter: 0,
+		loading: true
+	}
+
   render() {
     return (
       <div>
