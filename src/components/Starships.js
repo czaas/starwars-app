@@ -43,9 +43,11 @@ class Starships extends React.Component {
         <input type="text" name="search" onChange={this.updateSearch}/>
         <ul>
           {
-            this.state.ships.map( (ship, index) => {
+            this.state.ships.map((ship, index) => {
                if ( ship.name.toLowerCase().indexOf(this.state.currentSearch.toLowerCase()) !== -1 ) {
-                 return <li key={`starship${index}`}>{ship.name}</li> 
+                 return <li key={`starship${index}`}>{ship.name}</li>;
+               } else {
+                return null;
                }
              })            
           }
