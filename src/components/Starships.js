@@ -5,6 +5,7 @@ import { getUrlParams } from '../util.js';
 const swapi = new swapiModule();
 
 class Starships extends React.Component {
+  _isMounted = false;
 
   state = {
     ships: [],
@@ -14,18 +15,25 @@ class Starships extends React.Component {
 
   componentDidMount() {
     this.displayItems();
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   displayItems = () => {
     const that = this;
     swapi.getStarships(that.state.page, res => {
-      that.setState({
-        page: getUrlParams(res.next)['page'],
-        ships: [...that.state.ships, ...res.results]
-      });
+      if (this._isMounted) {
+        that.setState({
+          page: getUrlParams(res.next)['page'],
+          ships: [...that.state.ships, ...res.results]
+        });
 
-      if ( that.state.page !== undefined && that.state.page !== null ) {
-        that.displayItems();
+        if ( that.state.page !== undefined && that.state.page !== null ) {
+          that.displayItems();
+        }
       }
     });
   }
@@ -43,9 +51,11 @@ class Starships extends React.Component {
         <input type="text" name="search" onChange={this.updateSearch}/>
         <ul>
           {
-            this.state.ships.map( (ship, index) => {
+            this.state.ships.map((ship, index) => {
                if ( ship.name.toLowerCase().indexOf(this.state.currentSearch.toLowerCase()) !== -1 ) {
-                 return <li key={`starship${index}`}>{ship.name}</li> 
+                 return <li key={`starship${index}`}>{ship.name}</li>;
+               } else {
+                return null;
                }
              })            
           }
