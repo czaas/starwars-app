@@ -12,20 +12,21 @@ class Starships extends React.Component {
   }
 
   componentDidMount() {
+    this.displayItems();
+  }
+
+  displayItems = () => {
     const that = this;
-
-    swapi.getStarships(that.state.page, res => {                
-      let next = that.getUrlParams(res.next)['page'];      
+    swapi.getStarships(that.state.page, res => {
       that.setState({
-        page: next
-      })
-
-      that.setState({
+        page: that.getUrlParams(res.next)['page'],
         ships: [...that.state.ships, ...res.results]
-      })
+      });
 
+      if ( that.state.page !== undefined && that.state.page !== null ) {
+        that.displayItems();
+      }
     });
-
   }
 
   updateSearch = (e) => {
@@ -89,8 +90,6 @@ class Starships extends React.Component {
           }
           
         </ul>
-        <button>Prev</button>
-        <button>Next</button>
       </div>
     );
   }
