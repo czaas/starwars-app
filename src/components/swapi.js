@@ -4,8 +4,8 @@ var swapi = function () {
 
   function request(url, cb) {
     function listener(e) {
-      if(oReq.readyState != 4 && e.type !== 'load') return;
-      if(oReq.status && oReq.status != 200) {
+      if(oReq.readyState !== 4 && e.type !== 'load') return;
+      if(oReq.status && oReq.status !== 200) {
         //this will be the error handler
       } else {
         cb(JSON.parse(oReq.responseText));
@@ -36,11 +36,6 @@ var swapi = function () {
 
   function getResources(cb) {
     request(rootURL, cb);
-  }
-
-  //generic for ALL calls, todo, why optimize now!
-  function getResource(u, cb) {
-
   }
 
   function singularRequestGenerator(path) {
