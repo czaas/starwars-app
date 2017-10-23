@@ -1,6 +1,5 @@
 import React from 'react';
 import swapiModule from './swapi.js';
-import { getUrlParams } from '../util.js';
 
 const swapi = new swapiModule();
 

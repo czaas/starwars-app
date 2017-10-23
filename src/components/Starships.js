@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import swapiModule from './swapi.js';
+import { getUrlParams } from '../util.js';
 
 const swapi = new swapiModule();
 
