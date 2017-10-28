@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Starships from './components/Starships';
 import Starship from './components/Starship';
 import Vehicles from './components/Vehicles';
+import Vehicle from './components/Vehicle';
 import NotFound from './components/NotFound';
 
 import './App.scss';
@@ -37,6 +38,7 @@ class App extends Component {
             <Route path="/starships" exact component={Starships} />
             <Route path="/starships/:id" component={Starship} />
             <Route path="/vehicles" exact component={Vehicles} />
+            <Route path="/vehicles/:id" exact component={Vehicle} />
             <Route path="*" render={NotFound} />
           </Switch>
         </div>
