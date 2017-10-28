@@ -18,10 +18,6 @@ import NotFound from './components/NotFound';
 import './App.scss';
 
 class App extends Component {
-	state = {
-		counter: 0,
-		loading: true
-	}
 
   render() {
     return (
