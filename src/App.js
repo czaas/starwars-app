@@ -9,6 +9,7 @@ import {
 import Home from './components/Home';
 import Starships from './components/Starships';
 import Starship from './components/Starship';
+import Vehicles from './components/Vehicles';
 import NotFound from './components/NotFound';
 
 import './App.scss';
@@ -27,6 +28,7 @@ class App extends Component {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/starships">Starships</Link></li>
+            <li><Link to="/vehicles">Vehicles</Link></li>
             <li><Link to="/some-broken-link">Broken Link</Link></li>
           </ul>
 
@@ -34,6 +36,7 @@ class App extends Component {
             <Route path="/" exact render={Home} />
             <Route path="/starships" exact component={Starships} />
             <Route path="/starships/:id" component={Starship} />
+            <Route path="/vehicles" exact component={Vehicles} />
             <Route path="*" render={NotFound} />
           </Switch>
         </div>
