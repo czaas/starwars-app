@@ -11,6 +11,7 @@ import People from './components/People';
 import Person from './components/Person';
 import Planets from './components/Planets';
 import Planet from './components/Planet';
+import AllSpecies from './components/AllSpecies';
 import Starships from './components/Starships';
 import Starship from './components/Starship';
 import Vehicles from './components/Vehicles';
@@ -30,6 +31,7 @@ class App extends Component {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/people">People</Link></li>
             <li><Link to="/planets">Planets</Link></li>
+            <li><Link to="/species">Species</Link></li>
             <li><Link to="/starships">Starships</Link></li>
             <li><Link to="/vehicles">Vehicles</Link></li>
             <li><Link to="/some-broken-link">Broken Link</Link></li>
@@ -41,6 +43,7 @@ class App extends Component {
             <Route path="/people/:id" component={Person} />
             <Route path="/planets" exact component={Planets} />
             <Route path="/planets/:id"  component={Planet} />
+            <Route path="/species" exact component={AllSpecies} />
             <Route path="/starships" exact component={Starships} />
             <Route path="/starships/:id" component={Starship} />
             <Route path="/vehicles" exact component={Vehicles} />
