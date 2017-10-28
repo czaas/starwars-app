@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './components/Home';
+import Films from './components/Films';
 import People from './components/People';
 import Person from './components/Person';
 import Planets from './components/Planets';
@@ -30,6 +31,7 @@ class App extends Component {
           <h1>Star Wars</h1>
           <ul>
             <li><Link to="/">Home</Link></li>
+            <li><Link to="/films">Films</Link></li>
             <li><Link to="/people">People</Link></li>
             <li><Link to="/planets">Planets</Link></li>
             <li><Link to="/species">Species</Link></li>
@@ -40,6 +42,7 @@ class App extends Component {
 
           <Switch>
             <Route path="/" exact render={Home} />
+            <Route path="/films" exact component={Films} />
             <Route path="/people" exact component={People} />
             <Route path="/people/:id" component={Person} />
             <Route path="/planets" exact component={Planets} />
