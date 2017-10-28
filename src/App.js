@@ -8,6 +8,7 @@ import {
 
 import Home from './components/Home';
 import Films from './components/Films';
+import Film from './components/Film';
 import People from './components/People';
 import Person from './components/Person';
 import Planets from './components/Planets';
@@ -43,6 +44,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact render={Home} />
             <Route path="/films" exact component={Films} />
+            <Route path="/films/:id" component={Film} />
             <Route path="/people" exact component={People} />
             <Route path="/people/:id" component={Person} />
             <Route path="/planets" exact component={Planets} />

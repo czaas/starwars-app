@@ -37,7 +37,6 @@ class Films extends React.Component {
           that.displayItems();
         }
       }
-      console.log(res);
     });
   }
 
