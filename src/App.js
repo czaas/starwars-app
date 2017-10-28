@@ -8,6 +8,7 @@ import {
 
 import Home from './components/Home';
 import People from './components/People';
+import Person from './components/Person';
 import Planets from './components/Planets';
 import Planet from './components/Planet';
 import Starships from './components/Starships';
@@ -37,6 +38,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact render={Home} />
             <Route path="/people" exact component={People} />
+            <Route path="/people/:id" component={Person} />
             <Route path="/planets" exact component={Planets} />
             <Route path="/planets/:id"  component={Planet} />
             <Route path="/starships" exact component={Starships} />
